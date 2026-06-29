@@ -2,8 +2,6 @@
 
 Concept landing page for a fictional Japanese mountain racing team. Built as a portfolio piece — single static HTML file, no build step, no framework.
 
-**Live site:** [BingoTrousers.github.io/apex-ghost](https://BingoTrousers.github.io/apex-ghost) *(enable GitHub Pages if not already)*
-
 ## Dev server
 
 ```bash

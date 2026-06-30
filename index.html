@@ -140,10 +140,25 @@
     .hero-cta-row   { flex-wrap: wrap !important; }
     .hero-stats-row { flex-wrap: wrap !important; }
 
-    /* Race log — full-bleed horizontal scroll */
-    .race-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -24px !important; padding: 0 24px !important; }
-    .race-header,
-    .race-row    { min-width: 560px; }
+    /* Race log — card layout (replaces horizontal scroll) */
+    .race-header { display: none !important; }
+    .race-row {
+      display: grid !important;
+      min-width: unset !important;
+      grid-template-columns: 1fr auto !important;
+      row-gap: 4px !important;
+      column-gap: 16px !important;
+      padding: 18px 0 !important;
+      align-items: center !important;
+    }
+    .rc-code   { grid-column: 1 !important; grid-row: 1 !important;
+                 font-size: 9px !important; }
+    .rc-loc    { grid-column: 1 !important; grid-row: 2 !important;
+                 font-size: 15px !important; }
+    .rc-date   { grid-column: 1 !important; grid-row: 3 !important; }
+    .rc-type   { display: none !important; }
+    .rc-status { display: none !important; }
+    .rc-result { grid-column: 2 !important; grid-row: 1 / 4 !important; }
 
     /* Next race */
     .next-race-grid { grid-template-columns: 1fr !important; }
@@ -502,57 +517,57 @@
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">AKG-01</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">AKAGI PASS</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">APR 14</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">1ST</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">AKG-01</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">AKAGI PASS</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">APR 14</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">1ST</span>
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">MYG-02</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">MYOGI CIRCUIT</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">MAY 02</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">1ST</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">MYG-02</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">MYOGI CIRCUIT</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">MAY 02</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">1ST</span>
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">USU-03</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">USUI DOWNHILL</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">MAY 28</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">2ND</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">USU-03</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #0d0c0b; letter-spacing: 0.02em; text-transform: uppercase;">USUI DOWNHILL</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">MAY 28</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #00C97A; text-transform: uppercase;">COMPLETE</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #1F72FF; letter-spacing: 0.02em;">2ND</span>
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">IRH-04</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">IROHA-ZAKA</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">JUN 15</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">CIRCUIT</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">IRH-04</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">IROHA-ZAKA</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">JUN 15</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">CIRCUIT</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">HRN-05</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">HARUNA PEAK</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">JUL 08</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">HRN-05</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">HARUNA PEAK</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">JUL 08</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">TOUGE</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
     </div>
 
     <div class="race-row" style="display: grid; grid-template-columns: 108px 1fr 110px 100px 130px 90px; gap: 0; padding: 20px 0; border-bottom: 1px solid rgba(13,12,11,0.06); align-items: center;">
-      <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">NKS-06</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">NIKKO SPRINT</span>
-      <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">AUG 20</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">CIRCUIT</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
-      <span style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
+      <span class="rc-code"   style="font-family: 'Space Mono', monospace; font-size: 10px; color: #c4c2be; letter-spacing: 0.14em;">NKS-06</span>
+      <span class="rc-loc"    style="font-family: 'Exo 2', sans-serif; font-size: 17px; font-weight: 700; font-style: italic; color: #c4c2be; letter-spacing: 0.02em; text-transform: uppercase;">NIKKO SPRINT</span>
+      <span class="rc-date"   style="font-family: 'Space Mono', monospace; font-size: 11px; color: #8a8784; letter-spacing: 0.08em;">AUG 20</span>
+      <span class="rc-type"   style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">CIRCUIT</span>
+      <span class="rc-status" style="font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #c4c2be; text-transform: uppercase;">UPCOMING</span>
+      <span class="rc-result" style="font-family: 'Exo 2', sans-serif; font-size: 16px; font-weight: 900; font-style: italic; color: #c4c2be; letter-spacing: 0.02em;">—</span>
     </div>
   </div>
 </section>

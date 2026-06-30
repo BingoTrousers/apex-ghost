@@ -133,8 +133,15 @@
     /* Telemetry */
     .telemetry-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
-    /* Race log — horizontal scroll */
-    .race-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* HUD bar: tighten cell padding so "IROHA-ZAKA" doesn't clip */
+    .hud-bar > div { padding-left: 10px !important; padding-right: 10px !important; }
+
+    /* Hero buttons + stats: wrap instead of overflow on narrow phones */
+    .hero-cta-row   { flex-wrap: wrap !important; }
+    .hero-stats-row { flex-wrap: wrap !important; }
+
+    /* Race log — full-bleed horizontal scroll */
+    .race-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -24px !important; padding: 0 24px !important; }
     .race-header,
     .race-row    { min-width: 560px; }
 
@@ -210,12 +217,12 @@
         <p style="font-family: 'Exo 2', sans-serif; font-weight: 300; font-style: italic; font-size: 18px; color: #8a8784; letter-spacing: 0.04em; line-height: 1.65;">WHERE THE MOUNTAIN ENDS,<br>WE BEGIN.</p>
       </div>
 
-      <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 56px;">
+      <div class="hero-cta-row" style="display: flex; gap: 12px; align-items: center; margin-bottom: 56px;">
         <a href="#machines" class="btn-primary"  style="font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 800; font-style: italic; letter-spacing: 0.2em; text-transform: uppercase; padding: 13px 30px; border-radius: 5px;">▶ VIEW LINEUP</a>
         <a href="#events"   class="btn-secondary" style="font-family: 'Exo 2', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 12px 26px; border-radius: 5px;">RACE LOG</a>
       </div>
 
-      <div style="display: flex; gap: 0;">
+      <div class="hero-stats-row" style="display: flex; gap: 0;">
         <div style="padding-right: 28px; border-right: 1px solid rgba(13,12,11,0.1);">
           <div style="font-family: 'Exo 2', sans-serif; font-weight: 900; font-style: italic; font-size: 42px; color: #0d0c0b; line-height: 1; letter-spacing: -0.02em;">04</div>
           <div style="font-family: 'Exo 2', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; color: #c4c2be; text-transform: uppercase; margin-top: 4px;">SEASONS</div>
